@@ -1,0 +1,28 @@
+{
+  "name": "generic-explainer-horizontal-v1",
+  "canvas": "1280x720",
+  "duration_seconds": "For a still image or --demo the default is 12. For a video it is the input duration from start_seconds to source end unless duration_seconds is supplied.",
+  "purpose": "通用口播、软件教程、服务说明和产品演示的横屏证据画面。真实截图或录屏永远是主画面，模板只提供标题、步骤、重点框和字幕安全区。",
+  "editable": {
+    "title": "本期核心结论或步骤名。侧栏最多两行，完整句子留在字幕轨。",
+    "kicker": "栏目名或语境标签。",
+    "step_one": "原状态阶段的短提示。",
+    "step_two": "动作阶段的短提示。",
+    "step_three": "结果阶段的短提示。",
+    "caption_one": "原状态时，观众正在听到的一句口播。",
+    "caption_two": "动作发生时，观众正在听到的一句口播。",
+    "caption_three": "结果稳定时，观众正在听到的一句口播。",
+    "input": "真实的截图、录屏或产品实拍。先遮掉账号、手机号、订单、聊天记录及无关人脸。",
+    "start_seconds": "视频源入点，默认 0。",
+    "duration_seconds": "可选。视频只会变短，绝不循环。图片默认 12 秒。",
+    "focus": "可选。860x440 主画面内的 x,y,width,height，必须是实际按钮、数字或结果区域。",
+    "action_at_seconds": "可选。模板输出内动作开始时刻。与 result_at_seconds 一起使用。",
+    "result_at_seconds": "可选。模板输出内结果可读时刻。与 action_at_seconds 一起使用。"
+  },
+  "timing": [
+    {"from": 0, "to": "action_at_seconds (exclusive)", "use": "原状态，给观众标题和主画面"},
+    {"from": "action_at_seconds", "to": "result_at_seconds (exclusive)", "use": "动作阶段，可选焦点框只圈实际目标"},
+    {"from": "result_at_seconds", "to": "output end", "use": "结果阶段，保留主画面让观众读完"}
+  ],
+  "license": "Template is workspace-authored. It contains no third-party image, font, music or stock video. Output uses the operator-supplied input only."
+}

@@ -1,0 +1,115 @@
+{
+  "revision": "demo-v1",
+  "timebase": "estimated",
+  "end_ms": 8000,
+  "lines": [
+    {
+      "id": "L01",
+      "text": "我点一下这里，把报告导出来。"
+    },
+    {
+      "id": "L02",
+      "text": "看，文件已经在这儿了。"
+    },
+    {
+      "id": "L03",
+      "text": "省下的时间，我就能拿来写复盘。"
+    }
+  ],
+  "assets": [
+    {
+      "id": "U01",
+      "origin": "user",
+      "kind": "video",
+      "purpose": "实际产品从点击导出到新文件出现的连续录屏",
+      "state": "requested",
+      "path": "",
+      "needs_download": false
+    },
+    {
+      "id": "W01",
+      "origin": "web",
+      "kind": "video",
+      "purpose": "手写复盘的动作近景",
+      "state": "candidate",
+      "path": "",
+      "needs_download": true,
+      "url": "https://www.pexels.com/video/close-up-of-person-writing-on-paper-7535005/",
+      "variant": "1080p；优先查看源片 6–9 秒",
+      "license": "Pexels License；按本期用途核对；作品署名 Mikhail Nilov",
+      "license_url": "https://www.pexels.com/license/",
+      "cost": "作品页标免费；下载大小待核"
+    },
+    {
+      "id": "G01",
+      "origin": "generated",
+      "kind": "graphic",
+      "purpose": "“写复盘”关键词排版",
+      "state": "ready",
+      "inline_design": "使用剪辑器文字层，墨绿 48px，暖黄下划线跟重音绘出。",
+      "needs_download": false
+    }
+  ],
+  "shots": [
+    {
+      "id": "S01",
+      "lines": [
+        "L01"
+      ],
+      "from_ms": 0,
+      "to_ms": 2400,
+      "assets": [
+        "U01"
+      ],
+      "picture": "U01 从点击前一秒到按下。",
+      "layout": "录屏全屏，按钮在右上；字幕居下。",
+      "motion": "说到导出时推近按钮，点击后留住反馈。",
+      "transition": "沿界面直接续接结果。",
+      "subtitle": "高亮“导出”。",
+      "bgm": "这次采用安静原声。",
+      "sfx": "检查已有系统点击音，保留一次。"
+    },
+    {
+      "id": "S02",
+      "lines": [
+        "L02"
+      ],
+      "from_ms": 2400,
+      "to_ms": 5600,
+      "assets": [
+        "U01"
+      ],
+      "picture": "U01 从下载完成到新文件列表。",
+      "layout": "结果行在中央；如已有真人同步轨，圆框放到左上空位。",
+      "motion": "跟随新增文件行停住；如界面拥挤，圆框退出。",
+      "transition": "结果停留后，接笔尖落纸的动作。",
+      "subtitle": "突出“文件”。",
+      "bgm": "延续安静原声。",
+      "sfx": "保留环境音。"
+    },
+    {
+      "id": "S03",
+      "lines": [
+        "L03"
+      ],
+      "from_ms": 5600,
+      "to_ms": 8000,
+      "assets": [
+        "W01",
+        "G01"
+      ],
+      "picture": "W01 已选秒段与 G01 字层。",
+      "layout": "笔尖占右侧，左边留给关键词。",
+      "motion": "跟笔尖落纸，重音处划出下划线。",
+      "transition": "尾镜自然收住。",
+      "subtitle": "高亮“写复盘”。",
+      "bgm": "沿用前段。",
+      "sfx": "源片有书写音则轻保留，否则留白。"
+    }
+  ],
+  "approvals": {
+    "plan": null,
+    "downloads": [],
+    "edit": null
+  }
+}

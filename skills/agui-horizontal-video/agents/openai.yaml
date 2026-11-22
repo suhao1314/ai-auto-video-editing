@@ -1,0 +1,4 @@
+interface:
+  display_name: "阿桂校园指南与横屏科普"
+  short_description: "按文稿先出逐句时间轴、补拍与下载清单，确认后剪成阿桂校园指南"
+  default_prompt: "用 $agui-horizontal-video 先给我这期的逐句包装方案、阿桂站位和素材下载确认单。"

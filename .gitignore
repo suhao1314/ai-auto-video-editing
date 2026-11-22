@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+node_modules/
+.venv/
+.env
+.env.*
+*.pem
+*.key
+*.mp4
+*.mov
+*.mkv
+*.wav
+*.mp3
+*.xlsx
+*.csv
+/projects/
+/renders/
