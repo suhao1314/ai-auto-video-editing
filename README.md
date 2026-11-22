@@ -1,54 +1,43 @@
 # AI 自动剪辑
 
-把文案、录音和素材整理成可审的逐句分镜，再剪成片。这个仓库有两个入口。
+用文案、旁白和真实素材剪口播视频。通用 Skill 负责逐句分镜、选材、字幕、声音和审片。阿桂校园知识 Skill 在这套流程上增加校园事实核验、横屏版式、角色站位和录屏打码。
 
-| 我要剪什么 | 选哪个 Skill |
-| --- | --- |
-| 口播、采访、产品演示、教程、测评，或从长访谈中选短片 | [通用 AI 视频剪辑](skills/ai-video-editing/SKILL.md) |
-| 横屏的阿桂校园知识、新生指南或校园榜单 | [阿桂校园知识](skills/agui-horizontal-video/SKILL.md)，搭配同级的通用 Skill |
+**本仓库的原创 Skill、脚本和模板仅限非商业使用。** 可以用来学习、做课程作业和非营利校园科普。付费代剪、广告赞助、带货、使用这些工具制作变现视频或集成到收费产品，均须事先取得权利人的书面授权。第三方组件遵循各自许可证。[非商用许可](LICENSE) · [第三方来源与许可](skills/ai-video-editing/upstream/sources.md)
 
-## 从一句话开始
+## 安装到 Codex
 
-**通用教程**　「用 `$ai-video-editing`。这段录屏教人导出报表，旁白已经录好。按原声列逐句时间轴，标出什么时候推近按钮、什么时候展示导出结果。需要网素材的话，先把具体条目发我。」
+在 Codex 对话里粘贴下面这句话，就能把两套 Skill 装在一起。安装完成后，新开一个对话，使用下一节的调用示例。
 
-**阿桂校园**　「用 `$agui-horizontal-video` 做一期桂工转专业。我给你两年的表格录屏和一份配音。把两段连续下滑的时码列出来，绩点镜头先遮住个人信息，片头参考我提供的正式成片。」
-
-已有稿子、配音或确认过的分镜，就从对应步骤接手。交分镜时，每句对应源素材、画面布局、动效、转场、字幕和声音。实际下载网站素材前确认具体条目。收到“素材核实后直接剪”，就沿用这一版授权。
-
-## 在新电脑上使用
-
-用有仓库访问权限的 GitHub 账号登录 GitHub CLI，运行以下命令。也可以在 GitHub 网页下载 ZIP，解压后进入含本 README 的目录。
-
-```sh
-gh repo clone suhao1314/ai-auto-video-editing
-cd ai-auto-video-editing
+```text
+请用 $skill-installer 从 GitHub 仓库 suhao1314/ai-auto-video-editing 的 main 分支安装两个目录：skills/ai-video-editing 和 skills/agui-horizontal-video。
 ```
 
-可以直接让能读取本地文件的 AI 读取上表对应的 `SKILL.md`。要让 Codex 在新会话自动发现这两套 Skill，在 Windows PowerShell 中从仓库根目录执行以下命令。已装过同名技能时，命令会报告现有位置，便于核对版本。
+**手动安装**也可以。下载后按下面三步操作，全程无需登录 GitHub。[下载 ZIP](https://github.com/suhao1314/ai-auto-video-editing/archive/refs/heads/main.zip)
 
-```powershell
-$skillRoot = if ($env:CODEX_HOME) { Join-Path $env:CODEX_HOME 'skills' } else { Join-Path $HOME '.codex/skills' }
-$skillNames = 'ai-video-editing', 'agui-horizontal-video'
-foreach ($name in $skillNames) {
-    $target = Join-Path $skillRoot $name
-    if (Test-Path -LiteralPath $target) { throw "已有同名技能，请先核对现有版本：$target" }
-}
-New-Item -ItemType Directory -Force -Path $skillRoot | Out-Null
-foreach ($name in $skillNames) {
-    Copy-Item -LiteralPath (Join-Path 'skills' $name) -Destination $skillRoot -Recurse -ErrorAction Stop
-}
+1. 解压 ZIP，打开里面的 `skills` 文件夹。
+2. 将完整的 `ai-video-editing` 和 `agui-horizontal-video` 两个目录并排复制到 Codex 的技能目录。Windows 默认为 `%USERPROFILE%\.codex\skills\`，macOS 和 Linux 默认为 `~/.codex/skills/`。设置过 `CODEX_HOME` 的用户复制到该目录下的 `skills/`。如果已有同名目录，先核对版本，保留自己的修改。
+3. 新开对话，输入 `$ai-video-editing` 或 `$agui-horizontal-video`。只剪通用视频可以单装前者，校园版会读取同级的通用版。
+
+## 怎么调用
+
+**通用剪辑**适合口播、教程、采访和产品演示。把文件放进当前项目，将示例中的文件名换成自己的。[通用 Skill](skills/ai-video-editing/SKILL.md)
+
+```text
+用 $ai-video-editing 剪一条报表导出教程。旁白是“教程配音.wav”，操作是“导出录屏.mp4”。先按原声给我逐句时间轴，标出鼠标点哪里、何时放大、结果停多久。需要下载的素材先列清单给我确认。
 ```
 
-两个目录放同一级。前期规划和分镜可以直接使用。可用 Python 3 从仓库根目录试验随附方案，检查它是否覆盖全部口播句及待备素材。
+**阿桂校园知识**适合非营利校园指南。使用者自备有权使用的校园实拍、角色图、屏幕录制和声音。阿桂的真实素材及配乐只保存在作者本地，公开仓库提供剪法和空白素材表。[校园 Skill](skills/agui-horizontal-video/SKILL.md) · [本地素材表](skills/agui-horizontal-video/references/asset-map.md)
+
+```text
+用 $agui-horizontal-video 做一期转专业校园科普。我提供“旁白.wav”“去年政策录屏.mp4”和“今年政策录屏.mp4”。两年的表格分别连续向下滚，讲到哪一行就停在哪一行。先列逐句画面、遮挡范围、角色站位和音效落点，缺哪一镜告诉我。
+```
+
+第一轮会拿到逐句分镜和素材缺口。定稿后可以直接说「按这版，素材核实后开剪」。网站素材按已确认的条目下载，成片按实际旁白对齐字幕。
+
+## 本地剪辑工具
+
+写文案和分镜可以直接开始。需要实剪或验片时，准备 FFmpeg 和 ffprobe。仓库附带的方案检查脚本可用 Python 3 运行，在解压后的仓库根目录执行以下命令即可检查一个三句分镜样例。其他工具按要做的步骤选用。[剪辑工具与用法](skills/ai-video-editing/references/workbench-video-tools.md)
 
 ```sh
 python skills/ai-video-editing/scripts/check_plan.py skills/ai-video-editing/assets/plan-example.json
 ```
-
-剪片和审片时按任务选工具。处理音视频先确认本机可以调用 FFmpeg、ffprobe；需要停顿粗剪、字幕格式转换或导出规格检测时，查看[工具与用法](skills/ai-video-editing/references/workbench-video-tools.md)。新电脑做阿桂片，先按[栏目素材表](skills/agui-horizontal-video/references/asset-map.md)指定自己的正式参考片、纸底、贴纸和获准使用的常驻配乐。真实录屏和原声按期提供。
-
-## 维护与来源
-
-跨栏目的改进写入通用 Skill，例如同一句的声画对齐、口播粗剪和审片。纸底、标题字样、阿桂站位、校园事实核验留在校园 Skill。每次根据正式成片回填有效改法，下次开剪时可以追到具体镜头。
-
-上游模板和脚本的版本、作者及许可在[来源登记](skills/ai-video-editing/upstream/sources.md)。拍摄素材、字体、音色和音乐按各自授权使用。
