@@ -1,4 +1,4 @@
 interface:
   display_name: "通用 AI 视频剪辑"
-  short_description: "拆解参考片，按声音和证据选镜，核对剪后字幕，用画面与波形复查争议剪点"
-  default_prompt: "用 $ai-video-editing 根据我的文稿先出逐句包装方案、B-roll 清单和待确认下载项。"
+  short_description: "按目标和现有素材接手视频，从选题写稿、画面与声音到返修审片，自动选用对应做法"
+  default_prompt: "用 $ai-video-editing 看这期要交什么、手头已经有什么，接着做到约定的交付阶段。"

@@ -2,6 +2,12 @@
 
 本目录保存固定版本的上游说明、选中的实现和许可证。技能入口快照使用 `.upstream.md` 后缀，项目从通用技能入口选用。以下提交链接可回查到原作者对应版本。
 
+## HyperFrames 栏目版式与镜头停留
+
+2026-11-23 对照同一提交的两处原文。上游 `frame.md` 将品牌设计转成画幅内的字号、构图和运动约束；本栏目借用这个思路，在已有包装表区分固定版式和当期可换内容。[官方说明](https://github.com/heygen-com/hyperframes/blob/871333e80215dc460fe46d6f01083d85c2e0da3b/README.md#framemd)
+
+对比组件把揭示、静止阅读和退场分段，声音事件只标示落点。我们将这种节奏写进[镜头返修方法](../references/motion-and-sound.md#返修镜头的停留时间)。本次为方法借鉴，已收录的三个原组件仍以其各自登记的提交为准。[对比组件源码](https://github.com/heygen-com/hyperframes/blob/871333e80215dc460fe46d6f01083d85c2e0da3b/registry/components/before-after-wipe/before-after-wipe.html)
+
 ## 工作台筛入的剪辑和导出 Skill
 
 [Auto-Editor 31.8.0 固定提交](https://github.com/WyattBlue/auto-editor/tree/654a5138cd50767a63a6644c89c667e75d894d88)提供[原剪辑 Skill](auto-editor/editing.upstream.md)、[原导出 Skill](auto-editor/export.upstream.md)和[许可证](auto-editor/LICENSE)。原文件 SHA-256 依次为 `bef5e21914f7464092ea4d62fb7510a4f14a1c9b80f77f0e2d33265eb059791c`、`8d3adf9302e38b755ffafecde39551b3f4a21db161491f1d80b237a222bac2d0`、`ca2abdf695884c77ea4b4a5b64ca7b732d9d9dbade4eebc1c2e76c53e9e3bc83`。源码使用 Unlicense，发行二进制中各组件另按所附条款。SeConv、MediaInfo 和本机 Pixelmatch 的实际版本、路径、适用环节和可复查命令见[工作台剪辑工具](../references/workbench-video-tools.md)。

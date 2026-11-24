@@ -72,7 +72,7 @@ $info.media.track | Select-Object '@type',Format,Width,Height,FrameRate_Mode,Fra
 | 同规格的活动卡、对比卡要批量换文字或数据 | Satori 可将版式与内容渲染为 SVG，再按实际画幅导出成图。先试一张最长中文、确认字体和换行，再做全组；片头沿用已经定好的栏目字体。[原项目](https://github.com/vercel/satori) |
 | 操作示意缺少统一图标 | Lucide 可补通用线形图标；先查可用本地库，需要联网取图标时仍先确认具体名称。真实产品按钮从当期录屏取。[官方指南](https://lucide.dev/guide/) |
 | 课程口播已经有 Markdown 讲义 | Marp CLI 可把选中的章节导出逐页图片，在讲到对应概念时入画；软件操作仍需展示真实点击与结果。[官方 CLI](https://github.com/marp-team/marp-cli) |
-| 用户明确要求浏览器本地选择、预读或剪切文件 | Mediabunny 的文件读取与转换可用于网页预处理；确定目标浏览器后用相同编码试文件，核对音画时长。现有桌面工程可继续用 FFmpeg。这次没有做浏览器或微信端实测。[官方文件读取](https://mediabunny.dev/guide/reading-media-files) |
+| 交付的网页需要在浏览器内选择、预读或剪切本地文件 | Mediabunny 的文件读取与转换可用于网页预处理；确定目标浏览器后用相同编码试文件，核对音画时长。现有桌面工程可继续用 FFmpeg。这次没有做浏览器或微信端实测。[官方文件读取](https://mediabunny.dev/guide/reading-media-files) |
 
 其余 21 项的当前用途分别是网页与接口开发验证（Storybook、Grafana k6、Hurl、Lighthouse CI、Knip、fast-check、MSW、axe-core、DOMPurify、Dexie.js、Driver.js、Linkinator、Pagefind），文档整理（PDF Arranger、Paged.js、docxtpl），以及调研营销（Formbricks、Marketing-for-Founders、Agency Agents、PM Skills、Marketing Skills）。随包剪辑组件的版本与许可见[上游来源](../upstream/sources.md)。
 

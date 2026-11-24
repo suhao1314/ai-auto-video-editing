@@ -1,6 +1,6 @@
 # AI 自动剪辑
 
-把文案、旁白和手头的素材交给你常用的 AI。开剪前，你就能看到**每句话配哪一镜、从哪里取、还缺什么**；审片时，也能直接指出“第 35 秒表格滚快了”，让 AI 按时码返修。适合做口播、教程、访谈和校园科普的人。
+把选题、录屏或上一版审片交给你常用的 AI，说说这次想拿到什么。只有选题时，可以从口播稿开始；已有定稿旁白，就拿原声排画面；有一处没看清，直接指出时码就能返修。适合做口播、教程、访谈和校园科普的人。
 
 这里的 **Skill 是 AI 可以阅读的剪辑说明**。能读文字的 AI 就能用它写分镜、列补拍清单；能读取音视频并调用剪辑工具的 AI，还可以按原声校时、剪片和检查导出。**原创内容仅限非商业使用。** [使用许可](LICENSE)
 
@@ -11,9 +11,8 @@
 ```text
 请按这个仓库里的剪辑说明帮我做一期视频：
 https://github.com/suhao1314/ai-auto-video-editing
-先读 skills/ai-video-editing/SKILL.md，用我的原话列逐句分镜。
-写清每句给观众看什么、用哪段素材、哪里要补拍。网素材先列给我确认。
-这期教同学导出报表，我有一段操作录屏和定稿旁白。
+从 skills/ai-video-editing/SKILL.md 开始，按我手头的材料接着做。
+这期教同学导出报表。我有一段录屏和定稿旁白，想让大家能听着我的话跟着点。
 ```
 
 **AI 打不开链接时**，打开下面的纯文本入口，把正文复制进聊天，附上文案或转写就能开始。校园片把两份都贴进去。支持附件的 AI 也可以接收这些文件。只有文字时先做估时分镜；能读取旁白后，再换成真实时码。[通用说明原文](https://raw.githubusercontent.com/suhao1314/ai-auto-video-editing/main/skills/ai-video-editing/SKILL.md) · [校园说明原文](https://raw.githubusercontent.com/suhao1314/ai-auto-video-editing/main/skills/agui-horizontal-video/SKILL.md) · [逐句分镜与备料表](skills/ai-video-editing/references/packaging-plan.md)
@@ -24,6 +23,7 @@ https://github.com/suhao1314/ai-auto-video-editing
 
 | 剪到哪一步 | 你能拿到什么 |
 | --- | --- |
+| 只有选题，要做短视频教程 | 从你发过的作品里找口吻，从同受众的优质片里看什么时候给答案。钩子过后直接展示第一步，例如把光标移到搜索框、输入观众要找的词。[抖音口播写法](skills/ai-video-editing/references/douyin-spoken-scripts.md) |
 | 开剪前，判断素材够不够 | 一张按句排列的分镜表。每句写清原话、要展示的动作、素材及源时码。已有录屏、需要补拍的实物、拟下载的网素材分开列，便于你一次确认。 |
 | 粗剪时，保住真正有用的停顿 | 原始口播可以先标出重复和长停顿，供编辑复听。教程里等待文件生成的两秒即使没人说话，也可以标记保留。已有定稿配音时，直接沿用它的停顿和内嵌音效排画面。 |
 | 审片时，把反馈落到一处剪点 | 可以直接说“第 35 秒这行还没读完，多停一会儿”。按该句回看前后镜头，改停留和字幕出点，导出后检查字幕是否越过片尾、音轨是否存在。 |
@@ -41,7 +41,7 @@ https://github.com/suhao1314/ai-auto-video-editing
 
 ### 安装到 Codex
 
-在 Codex 对话里粘贴下面两行，安装后新开对话，用 `$ai-video-editing` 或 `$agui-horizontal-video` 调用。
+在 Codex 对话里粘贴下面两行，安装后新开对话，直接描述剪辑任务即可。也可以用 `$ai-video-editing` 或 `$agui-horizontal-video` 点名选用。
 
 ```text
 请用 $skill-installer 从 GitHub 仓库 suhao1314/ai-auto-video-editing 的 main 分支安装：
