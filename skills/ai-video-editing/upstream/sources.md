@@ -2,6 +2,15 @@
 
 本目录保存固定版本的上游说明、选中的实现和许可证。技能入口快照使用 `.upstream.md` 后缀，项目从通用技能入口选用。以下提交链接可回查到原作者对应版本。
 
+## 录屏教程与口播动效
+
+2026-11-25 将两套项目中适用的编辑方法写入[操作镜头的制作与核验](../references/tutorial-evidence.md)。下表记录阅读版本。本次新增的制作和检查工具为本库编写，沿用本机已有的 FFmpeg 和本库原有的区域比对、区间审片能力。
+
+| 项目与阅读版本 | 具体吸收的做法 | 调用与公开分发 |
+| --- | --- | --- |
+| [OpenMontage 录屏流程](https://github.com/OpenMontageInc/OpenMontage/blob/2e003e65fa99a0f329478a2c1cdcf26bc481933a/pipeline_defs/screen-demo.yaml) · [工程说明](https://github.com/OpenMontageInc/OpenMontage/blob/2e003e65fa99a0f329478a2c1cdcf26bc481933a/README.md) | 产品教程优先用能看清步骤的实录。给关键操作标时、裁出目标位置、核对动作后的真实反馈；概念补镜可选实拍或明确的示意素材。试付费生成时先估算、记重试成本。 | 本次借鉴流程，未打包或调用上游运行环境。日后引入代码或把修改版作为网络服务，按 [AGPL-3.0 原文](https://github.com/OpenMontageInc/OpenMontage/blob/2e003e65fa99a0f329478a2c1cdcf26bc481933a/LICENSE)核对分发和源代码义务。 |
+| [video-talkcraft 词时码](https://github.com/Vincentwei1021/video-talkcraft/blob/8ec0f3740868c8cb14e137c19b481d41bb034ea8/scripts/timestamps_cpu.py) · [长页动效](https://github.com/Vincentwei1021/video-talkcraft/blob/8ec0f3740868c8cb14e137c19b481d41bb034ea8/references/cards/evidence-scroll-tour.md) · [音效核验](https://github.com/Vincentwei1021/video-talkcraft/blob/8ec0f3740868c8cb14e137c19b481d41bb034ea8/scripts/sfx_check.py) | 用最终旁白的关键词定时。长页镜头按信息位置减速停读；在独立音效轨定位可疑落点，回到混音检查。选用的方法由镜头证据与台词决定。 | 作者采用 [PolyForm Noncommercial 1.0.0 并有工具商用说明](https://github.com/Vincentwei1021/video-talkcraft/blob/8ec0f3740868c8cb14e137c19b481d41bb034ea8/LICENSE)。商业使用该工具需事先获得作者授权。此处只登记来源，自有实现未收录上游代码、动效卡、素材或提示词模板。 |
+
 ## HyperFrames 栏目版式与镜头停留
 
 2026-11-23 对照同一提交的两处原文。上游 `frame.md` 将品牌设计转成画幅内的字号、构图和运动约束；本栏目借用这个思路，在已有包装表区分固定版式和当期可换内容。[官方说明](https://github.com/heygen-com/hyperframes/blob/871333e80215dc460fe46d6f01083d85c2e0da3b/README.md#framemd)
